@@ -25,6 +25,11 @@ n=fn.findN(K,input_mass)
 print(n)
 
 o=n*K*1
+op=0
 
 for i in range(7):
-    print(o*np.exp(-1*K*(i+1)))
+    op=o*np.exp(-1*K*(i+1))
+    print(op)
+    n-=op
+
+print(n)
