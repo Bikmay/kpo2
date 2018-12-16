@@ -9,7 +9,8 @@ print("input values")
 input_mass=input().split(' ');
 
 
-i=1
-while(i<101):
-    if(f.comprasion_k(i/100,input_mass)):
-        k=i/100
+K = 0.01
+check = f.comprasion_k(K, input_mass)
+while not check:
+    K += 0.01
+    check = f.comprasion_k(K, input_mass)
