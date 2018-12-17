@@ -2,6 +2,10 @@ import functions as f
 import findN0 as fn
 import numpy as np
 
+#очищаем файл
+file = open("output.txt", 'w')
+file.close()
+
 input_mass=[]
 
 print("input values")
