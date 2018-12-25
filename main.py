@@ -2,22 +2,22 @@ from matplotlib import pyplot as plt
 import functions as f
 import findN0 as fn
 import numpy as np
-
+import justCopy as t
 #очищаем файл
 file = open("output.txt", 'w')
 file.close()
 
-# input_mass=[]
-#
-# print("input values")
-#
-#
-# input_mass=(input().split(' '));
-#
-# for i in range(7):
-#     input_mass[i]=int(input_mass[i])
+input_mass=[]
 
-input_mass = [5, 4, 2, 2, 1, 1, 0]
+print("input values")
+
+
+input_mass=(input().split(' '));
+
+for i in range(7):
+    input_mass[i]=int(input_mass[i])
+
+# input_mass = [5, 4, 2, 2, 1, 1, 0]
 
 K = 0.001
 check = f.comprasion_k(K, input_mass)
@@ -43,12 +43,12 @@ for i in range(7):
 
 print(n)
 
-# plt.title("Решение по модели Джелинского – Моранды, точки исходных данных")
-# plt.scatter(range(1, 8), input_mass, color='r')
-# plt.plot(range(1, 8), result_mass)
-# plt.grid(True, linestyle='-', color='0.5')
-# plt.savefig("plotOne.png")
-# plt.show()
+plt.title("Решение по модели Джелинского – Моранды,\nточки исходных данных")
+plt.scatter(range(1, 8), input_mass, color='r')
+plt.plot(range(1, 8), result_mass)
+plt.grid(True, linestyle='-', color='0.5')
+plt.savefig("plotOne.png")
+plt.show()
 
 nevyz = []
 
@@ -59,7 +59,7 @@ plt.title("Невязки")
 # plt.scatter(range(1, 8), input_mass, color='r')
 plt.plot(range(1, 8), nevyz)
 plt.grid(True, linestyle='-', color='0.5')
-# plt.savefig("plotNevyz.png")
+plt.savefig("plotNevyz.png")
 plt.show()
 
 for i in range(7):
@@ -69,8 +69,12 @@ plt.title("Квадраты невязок")
 # plt.scatter(range(1, 8), input_mass, color='r')
 plt.plot(range(1, 8), nevyz)
 plt.grid(True, linestyle='-', color='0.5')
-# plt.savefig("plotNevyz.png")
+plt.savefig("plotKvadNevyz.png")
 plt.show()
 
 sumKvadNevyz = sum(nevyz)
 print("\nсумма квадратов невязок = " + str(sumKvadNevyz))
+
+t.mnkGP(range(1,8), input_mass)
+
+exit()
