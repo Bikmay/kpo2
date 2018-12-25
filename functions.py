@@ -41,3 +41,7 @@ def printFile(sum1, sum2, sum3, sum4):
     f.write(result)
     f.write("\n\n")
     f.close()
+
+def nevyzka(input, exper):
+    result = input - exper
+    return result
